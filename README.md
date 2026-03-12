@@ -15,6 +15,8 @@ The question this answers: "What happens when things go wrong?" Test your estima
 
 ## Architecture
 
+![Architecture](docs/architecture.svg)
+
 ```
 include/fault/
 ├── types.hpp                    # FaultKind, TriggerMode, Severity, FaultEvent

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450" font-family="system-ui, -apple-system, sans-serif" font-size="12">
+  <defs>
+    <marker id="arrow-fi" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#64748b"/>
+    </marker>
+    <marker id="arrow-red-fi" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#ef4444"/>
+    </marker>
+  </defs>
+
+  <rect width="900" height="450" rx="8" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="450" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">fault-inject — Fault Injection + Resilience Testing</text>
+
+  <!-- Clean Signal -->
+  <rect x="30" y="70" width="140" height="80" rx="6" fill="#d1fae5" stroke="#10b981" stroke-width="1.5"/>
+  <text x="100" y="95" text-anchor="middle" font-weight="bold" fill="#065f46">Clean Signal</text>
+  <text x="100" y="115" text-anchor="middle" fill="#065f46" font-size="10">Ground truth</text>
+  <text x="100" y="132" text-anchor="middle" fill="#065f46" font-size="10">truth_fn(step)</text>
+
+  <!-- Injector -->
+  <rect x="220" y="55" width="250" height="200" rx="6" fill="#fef2f2" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="345" y="78" text-anchor="middle" font-weight="bold" fill="#b91c1c">Fault Injector</text>
+
+  <rect x="235" y="90" width="105" height="24" rx="3" fill="white" stroke="#ef4444"/>
+  <text x="287" y="107" text-anchor="middle" fill="#1e293b" font-size="9">BitFlip</text>
+  <rect x="350" y="90" width="105" height="24" rx="3" fill="white" stroke="#ef4444"/>
+  <text x="402" y="107" text-anchor="middle" fill="#1e293b" font-size="9">Stuck</text>
+  <rect x="235" y="122" width="105" height="24" rx="3" fill="white" stroke="#ef4444"/>
+  <text x="287" y="139" text-anchor="middle" fill="#1e293b" font-size="9">Drift</text>
+  <rect x="350" y="122" width="105" height="24" rx="3" fill="white" stroke="#ef4444"/>
+  <text x="402" y="139" text-anchor="middle" fill="#1e293b" font-size="9">Noise</text>
+  <rect x="235" y="154" width="105" height="24" rx="3" fill="white" stroke="#ef4444"/>
+  <text x="287" y="171" text-anchor="middle" fill="#1e293b" font-size="9">Drop</text>
+  <rect x="350" y="154" width="105" height="24" rx="3" fill="white" stroke="#ef4444"/>
+  <text x="402" y="171" text-anchor="middle" fill="#1e293b" font-size="9">Delay</text>
+
+  <text x="345" y="200" text-anchor="middle" fill="#b91c1c" font-size="9">Triggers: Immediate · AfterN</text>
+  <text x="345" y="215" text-anchor="middle" fill="#b91c1c" font-size="9">Probabilistic · Periodic</text>
+  <text x="345" y="232" text-anchor="middle" fill="#b91c1c" font-size="9">Seeded RNG · Deterministic</text>
+  <text x="345" y="247" text-anchor="middle" fill="#b91c1c" font-size="9">Value + Buffer injection</text>
+
+  <!-- System Under Test -->
+  <rect x="520" y="80" width="140" height="80" rx="6" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="590" y="105" text-anchor="middle" font-weight="bold" fill="#1e40af">System</text>
+  <text x="590" y="125" text-anchor="middle" fill="#1e40af" font-size="10">Under Test</text>
+  <text x="590" y="142" text-anchor="middle" fill="#1e40af" font-size="10">system_fn(v)</text>
+
+  <!-- Monitor -->
+  <rect x="710" y="55" width="170" height="200" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="795" y="78" text-anchor="middle" font-weight="bold" fill="#92400e">Monitor</text>
+  <rect x="725" y="92" width="140" height="30" rx="3" fill="white" stroke="#f59e0b"/>
+  <text x="795" y="112" text-anchor="middle" fill="#1e293b" font-size="10">Range Detector</text>
+  <rect x="725" y="130" width="140" height="30" rx="3" fill="white" stroke="#f59e0b"/>
+  <text x="795" y="150" text-anchor="middle" fill="#1e293b" font-size="10">Rate-of-Change</text>
+  <rect x="725" y="168" width="140" height="30" rx="3" fill="white" stroke="#f59e0b"/>
+  <text x="795" y="188" text-anchor="middle" fill="#1e293b" font-size="10">Innovation (χ²)</text>
+  <text x="795" y="220" text-anchor="middle" fill="#92400e" font-size="9">Anomaly counting</text>
+  <text x="795" y="235" text-anchor="middle" fill="#92400e" font-size="9">Staleness check</text>
+
+  <!-- Arrows -->
+  <line x1="170" y1="110" x2="220" y2="110" stroke="#ef4444" stroke-width="1.5" marker-end="url(#arrow-red-fi)"/>
+  <line x1="470" y1="120" x2="520" y2="120" stroke="#ef4444" stroke-width="1.5" marker-end="url(#arrow-fi)"/>
+  <line x1="660" y1="120" x2="710" y2="120" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow-fi)"/>
+
+  <!-- Campaign -->
+  <rect x="130" y="300" width="640" height="90" rx="6" fill="#ede9fe" stroke="#8b5cf6" stroke-width="1.5"/>
+  <text x="450" y="325" text-anchor="middle" font-weight="bold" fill="#5b21b6">Campaign Runner</text>
+  <text x="450" y="348" text-anchor="middle" fill="#5b21b6" font-size="11">Multiple fault scenarios × N steps → structured results</text>
+  <text x="450" y="368" text-anchor="middle" fill="#5b21b6" font-size="11">Per-test: injections · detections · max error · mean error · detected? · survived?</text>
+
+  <!-- Footer -->
+  <text x="450" y="430" text-anchor="middle" fill="#94a3b8" font-size="10">Research prototype — not certified to any standard. Apache-2.0.</text>
+</svg>
